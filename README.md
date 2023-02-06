@@ -1,3 +1,9 @@
+Potential paint points
+
+- Click event and next page fetch
+- Masonry Grid
+- Bonus: skeleton
+
 # Jump2Digital 2022 | Frontend ⚛
 
 This is a response to the [Nuwe challenge](https://nuwe.io/dev/challenges/jump2digital2022-frontend) required to participate in the Jump2Digital hackathon 2022 edition. The goal is to build a modular price-card component starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:194) design. Visualize the [deployed project here](https://jump2-digital.vercel.app/).
