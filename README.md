@@ -1,12 +1,6 @@
-Potential paint points
-
-- Click event and next page fetch
-- Masonry Grid
-- Bonus: skeleton
-
 # Vueling Tech Hack | Front End Challenge ⚛
 
-This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vueling-tech-hack/unsplash-viewer-app-frontend) required to participate in the Vueling Tech Hack hackathon 2023 february Hackathon. The goal is to build a modular price-card component starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:194) design. Visualize the [deployed project here](https://jump2-digital.vercel.app/).
+This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vueling-tech-hack/unsplash-viewer-app-frontend) required to participate in the February Vueling Tech Hack 2023. The goal is to build an Unsplash viewer app starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:78) design. Visualize the [deployed project here]().
 
 **Quality test**
 
@@ -14,38 +8,40 @@ This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vue
 
 ## Requirements 🎯
 
-1. Build a modular-card price component
-2. Implement a dialog asking for an email
-3. View the optimal layout depending on the device
+1. Integrate the [Unsplash API](https://github.com/unsplash/unsplash-js#unsplash)
+2. Create a masonry layout as a gallery
+3. Implement a button that fetches new images from Unsplash API
 4. Deploy the project
 
 Extra improvements allowed:
 
-5. Implement animations
+5. Add effects
 6. Modify the design system
 7. Use [Codefactor](https://www.codefactor.io/) or [Sonarsource](https://www.sonarsource.com/) for a quality test
 
 ## Usage 📝
 
-The user can visualize a modular price cards and interact clicking a button that will prompt a modal asking for an email.
+The user can visualize a masonry grid layout and interact with them. If the user clicks the button new images from Unsplash will be fetched and rendered.
 
-Project structure is organized in component folders, each one including .jsx and .css files. The styles folder contains global css like custom variables, a reset stylesheet and utility classes.
-
-Data.js file contains data required to be rendered by the components so hardcoding it is mainly avoided.
+The project structure is organized in component folders, each one including .jsx and .css files. The styles folder contains the overall styles.
 
 ## Components 🧬
 
+- Loader
+- Button
+- CardPhoto
+- GridSection
+
 The project followed a [Component Driven UI](https://www.componentdriven.org/) development methodology creating components from the bottom up and then combining them into complex ones.
 
-The modal component is implemented using [React portals](https://reactjs.org/docs/portals.html). Portals let you render a children into a DOM node outside of the DOM hierarchy from its parent component.
+This challenge required to layout of the gallery and the images as a masonry grid. I implemented a CSS native approach to increasing browser-compatibility. This approach is straightforward and easy to implement and maintain compared to other libraries with similar effects.
 
-- Button
-- Input
-- List
-- Form
-- Modal
-- Card
-- Cardsection
+```css
+.gallery {
+  columns: 3 350px;
+  column-gap: 1em;
+}
+```
 
 ## Installation ⚙️
 
@@ -53,7 +49,7 @@ Clone this repository into a newly created directory
 
 ```shell
     # Clone repo
-    $ git clone git@github.com:alexcumplido/jump2Digital.git
+    $ git@github.com:alexcumplido/vueling-tech-hack.git
 ```
 
 ```shell
@@ -76,16 +72,15 @@ Clone this repository into a newly created directory
 - React
 - Vite
 
-As a build tool I used [Vite](https://vitejs.dev/) because of its fast configuration and also because creating a development environment from the ground up is a great oportunity to realize what dependencies and scripts the project will require.
+As a build tool, I used it because of its fast configuration and also because creating a development environment from the ground up is a great opportunity to realize what dependencies and scripts the project will require.
 
 ## Visuals 👀
 
-![Demo view](./src/assets/jump2Digital.gif)
+![Demo view](./src/assets/unsplashDemo.gif)
 
 ## Roadmap
 
 - Migration from JavaScript to TypeScript
-- Use Sass for the CSS
 
 ## Contributing 🙌
 
@@ -94,13 +89,11 @@ As a build tool I used [Vite](https://vitejs.dev/) because of its fast configura
 3. Implement changes
 4. Commit and subit a pull request with a description
 
-## Contact info 📫
+## Contact 📫
 
-Alexandre Cumplido Bou
+alexcubou@gmail.com
 
-[Linkedin](https://www.linkedin.com/in/alexandrecb/)
-
-[Portfolio](https://alexcumplido.github.io/portfolio/)
+[https://www.linkedin.com/in/alexandrecb/](https://www.linkedin.com/in/alexandrecb/)
 
 ## Acknowledgements 🙏
 
