@@ -21,7 +21,7 @@ Extra improvements allowed:
 
 ## Usage 📝
 
-The user can visualize a masonry grid layout and interact with them. If the user clicks the button new images from Unsplash will be fetched and rendered.
+The user can visualize a masonry grid layout and interact with them. If the user clicks the button new images from Unsplash will be fetched and rendered. The user can aslo click on the title of each and go to the original Unsplash user site.
 
 The project structure is organized in component folders, each one including .jsx and .css files. The styles folder contains the overall styles.
 
