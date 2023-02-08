@@ -1,16 +1,14 @@
-export function CardPhoto({ photo, idx }) {
+export function CardPhoto({ photo, key }) {
   return (
-    <li key={idx} className="item">
-      <img className="img" src={photo.urls.regular} alt="alternativa" />
-      <span>
-        <a
-          className="credit"
-          target="blank"
-          href={`https://unsplash.com/@${photo.user.username}`}
-        >
-          {photo.user.name}
-        </a>
-      </span>
+    <li key={key} className="item">
+      <img className="item__image" src={photo.regular} alt="alternativa" />
+      <a
+        className="item__link"
+        target="blank"
+        href={`https://unsplash.com/@${photo.user}`}
+      >
+        <span>{photo.username}</span> <span>{photo.description}</span>
+      </a>
     </li>
   );
 }

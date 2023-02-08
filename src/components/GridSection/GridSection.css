@@ -1,0 +1,14 @@
+.container-standard {
+  padding: 0 0.5rem;
+  max-width: var(--max-width-desktop);
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery {
+  columns: 3 350px;
+  column-gap: 1em;
+}
