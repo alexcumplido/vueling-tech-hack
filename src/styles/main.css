@@ -12,6 +12,7 @@
   --max-width-desktop: 1110px;
 
   --ff-primary: "Rubik", sans-serif;
+  --ff-secondary: "Trebuchet MS", "Lucida Sans Unicode";
   --ff-body: var(--ff-primary);
   --fs-body: var(--fs-200);
 

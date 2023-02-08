@@ -4,13 +4,13 @@ Potential paint points
 - Masonry Grid
 - Bonus: skeleton
 
-# Jump2Digital 2022 | Frontend ⚛
+# Vueling Tech Hack | Front End Challenge ⚛
 
-This is a response to the [Nuwe challenge](https://nuwe.io/dev/challenges/jump2digital2022-frontend) required to participate in the Jump2Digital hackathon 2022 edition. The goal is to build a modular price-card component starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:194) design. Visualize the [deployed project here](https://jump2-digital.vercel.app/).
+This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vueling-tech-hack/unsplash-viewer-app-frontend) required to participate in the Vueling Tech Hack hackathon 2023 february Hackathon. The goal is to build a modular price-card component starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:194) design. Visualize the [deployed project here](https://jump2-digital.vercel.app/).
 
 **Quality test**
 
-[![CodeFactor](https://www.codefactor.io/repository/github/alexcumplido/jump2digital/badge)](https://www.codefactor.io/repository/github/alexcumplido/jump2digital)
+[![CodeFactor](https://www.codefactor.io/repository/github/alexcumplido/vueling-tech-hack/badge)](https://www.codefactor.io/repository/github/alexcumplido/vueling-tech-hack)
 
 ## Requirements 🎯
 
