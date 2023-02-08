@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { unsplashApi } from "../../services/unsplash.js";
-import { PhotoCard } from "../PhotoCard/PhotoCard.jsx";
+// import { PhotoCard } from "../PhotoCard/PhotoCard.jsx";
 
 export const GridSection = () => {
   const [data, setPhotosResponse] = useState(null);
@@ -43,19 +43,34 @@ export const GridSection = () => {
     );
   } else {
     return (
-      <div className="feed">
-        <ul className="container">
+      <>
+        <div className="container-standard button-wrapper">
+          <button className="button" onClick={(event) => handleClick(event)}>
+            Cargar nuevas fotos
+          </button>
+        </div>
+        <ul className="gallery container-standard">
           {dataApi &&
             dataApi.map((photo, idx) => (
-              <li key={idx} className="li">
-                <PhotoCard photo={photo} />
+              <li key={idx} className="item">
+                <img
+                  className="img"
+                  src={photo.urls.regular}
+                  alt="alternativa"
+                />
+                <span>
+                  <a
+                    className="credit"
+                    target="blank"
+                    href={`https://unsplash.com/@${photo.user.username}`}
+                  >
+                    {photo.user.name}
+                  </a>
+                </span>
               </li>
             ))}
         </ul>
-        <button className="padding" onClick={(event) => handleClick(event)}>
-          Load more
-        </button>
-      </div>
+      </>
     );
   }
 };
