@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { unsplashApi } from "../../services/unsplash.js";
-// import { PhotoCard } from "../PhotoCard/PhotoCard.jsx";
+import { Button } from "../Button/Button.jsx";
+import { Loader } from "../Loader/Loader.jsx";
+import { CardPhoto } from "../CardPhoto/CardPhoto.jsx";
 
 export const GridSection = () => {
   const [data, setPhotosResponse] = useState(null);
   const [dataApi, setDataApi] = useState([]);
   let [page, setPage] = useState(1);
+
   const handleClick = () => {
     if (page < data.response.total_pages) {
       setPage(++page);
@@ -32,45 +35,21 @@ export const GridSection = () => {
     fetchUnsplash();
   }, [page]);
 
-  if (data === null) {
-    return <div>Loading...</div>;
-  } else if (data.errors) {
-    return (
-      <div>
-        <div>{data.errors[0]}</div>
-        <div>PS: Make sure to set your access token!</div>
-      </div>
-    );
-  } else {
-    return (
-      <>
-        <div className="container-standard button-wrapper">
-          <button className="button" onClick={(event) => handleClick(event)}>
-            Cargar nuevas fotos
-          </button>
-        </div>
-        <ul className="gallery container-standard">
+  return (
+    <section className="container-standard">
+      <Button
+        handleClick={handleClick}
+        className={"button"}
+        textButton={"Cargar nuevas fotos"}
+      />
+      {data === null || data.errors ? (
+        <Loader />
+      ) : (
+        <ul className="gallery">
           {dataApi &&
-            dataApi.map((photo, idx) => (
-              <li key={idx} className="item">
-                <img
-                  className="img"
-                  src={photo.urls.regular}
-                  alt="alternativa"
-                />
-                <span>
-                  <a
-                    className="credit"
-                    target="blank"
-                    href={`https://unsplash.com/@${photo.user.username}`}
-                  >
-                    {photo.user.name}
-                  </a>
-                </span>
-              </li>
-            ))}
+            dataApi.map((photo, idx) => <CardPhoto photo={photo} key={idx} />)}
         </ul>
-      </>
-    );
-  }
+      )}
+    </section>
+  );
 };
