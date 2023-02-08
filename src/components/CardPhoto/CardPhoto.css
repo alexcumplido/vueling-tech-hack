@@ -27,7 +27,6 @@
   bottom: 0;
   width: 100%;
   color: var(--color-primary-150);
-  font-size: 1.15rem;
   display: flex;
   flex-direction: column;
   font-size: var(--fs-300);
