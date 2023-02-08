@@ -3,14 +3,15 @@ import { unsplashApi } from "../../services/unsplash.js";
 import { Button } from "../Button/Button.jsx";
 import { Loader } from "../Loader/Loader.jsx";
 import { CardPhoto } from "../CardPhoto/CardPhoto.jsx";
+import { cleanObject } from "../../services/cleaner";
 
 export const GridSection = () => {
-  const [data, setPhotosResponse] = useState(null);
-  const [dataApi, setDataApi] = useState([]);
+  const [dataFetched, setDataFetched] = useState(null);
+  const [images, setImages] = useState([]);
   let [page, setPage] = useState(1);
 
   const handleClick = () => {
-    if (page < data.response.total_pages) {
+    if (page < dataFetched.response.total_pages) {
       setPage(++page);
     }
   };
@@ -24,18 +25,11 @@ export const GridSection = () => {
         color: "green",
         orientation: "landscape",
       });
-      setPhotosResponse(data);
-      const resultsMapper = data.response.results.map(function (element) {
-        return {
-          id: element.id,
-          regular:
-            element.urls.regular || element.urls.full || element.urls.raw,
-          description: element.description || element.alt_description,
-          user: element.user.username,
-          username: element.user.name,
-        };
-      });
-      setDataApi((dataApi) => [...dataApi, ...resultsMapper]);
+      setDataFetched(data);
+      const resultsMapper = data.response.results.map((element) =>
+        cleanObject(element)
+      );
+      setImages((images) => [...images, ...resultsMapper]);
     } catch (error) {
       throw new Error(error);
     }
@@ -52,13 +46,13 @@ export const GridSection = () => {
         className={"button"}
         textButton={"Cargar nuevas fotos"}
       />
-      {data === null || data.errors ? (
+      {dataFetched === null || dataFetched.errors ? (
         <Loader />
       ) : (
         <ul className="gallery">
-          {dataApi &&
-            dataApi.map((element) => (
-              <CardPhoto photo={element} key={element.id} />
+          {images &&
+            images.map((element) => (
+              <CardPhoto key={element.id} photo={element} />
             ))}
         </ul>
       )}
