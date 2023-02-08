@@ -10,9 +10,9 @@ export async function fetchUnsplash(page) {
   let data;
   try {
     data = await unsplashApi.search.getPhotos({
-      query: "home",
+      query: "nature",
       page: page,
-      perPage: 12,
+      perPage: 13,
       color: "green",
       orientation: "landscape",
     });
