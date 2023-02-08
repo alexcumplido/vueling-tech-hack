@@ -12,7 +12,7 @@ export async function fetchUnsplash(page) {
     data = await unsplashApi.search.getPhotos({
       query: "nature",
       page: page,
-      perPage: 13,
+      perPage: 11,
       color: "green",
       orientation: "landscape",
     });
