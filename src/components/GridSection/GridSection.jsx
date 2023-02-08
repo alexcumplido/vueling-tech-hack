@@ -25,7 +25,17 @@ export const GridSection = () => {
         orientation: "landscape",
       });
       setPhotosResponse(data);
-      setDataApi((dataApi) => [...dataApi, ...data.response.results]);
+      const resultsMapper = data.response.results.map(function (element) {
+        return {
+          id: element.id,
+          regular:
+            element.urls.regular || element.urls.regular || element.urls.full,
+          description: element.description || element.alt_description,
+          user: element.user.username,
+          username: element.user.name,
+        };
+      });
+      setDataApi((dataApi) => [...dataApi, ...resultsMapper]);
     } catch (error) {
       throw new Error(error);
     }
@@ -47,7 +57,9 @@ export const GridSection = () => {
       ) : (
         <ul className="gallery">
           {dataApi &&
-            dataApi.map((photo, idx) => <CardPhoto photo={photo} key={idx} />)}
+            dataApi.map((element) => (
+              <CardPhoto photo={element} key={element.id} />
+            ))}
         </ul>
       )}
     </section>

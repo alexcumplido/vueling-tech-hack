@@ -1,0 +1,38 @@
+.item {
+  position: relative;
+  margin-bottom: 1em;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.1s ease-in;
+}
+
+.item:hover {
+  transform: scale(1.03);
+}
+
+.item__image {
+  display: block;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.item__image:hover {
+  opacity: 0.95;
+}
+
+.item__link {
+  padding: 0 1rem 0.5rem 0.5rem;
+  position: absolute;
+  text-decoration: none;
+  bottom: 0;
+  width: 100%;
+  color: var(--color-primary-150);
+  font-size: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-300);
+}
+
+.item__link span:last-of-type {
+  font-size: var(--fs-100);
+}
