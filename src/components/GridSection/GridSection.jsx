@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { unsplashApi } from "../../services/unsplash.js";
-import { PhotoCard } from "../PhotoCard/PhotoCard.jsx";
+// import { PhotoCard } from "../PhotoCard/PhotoCard.jsx";
 
 export const GridSection = () => {
   const [data, setPhotosResponse] = useState(null);
@@ -47,8 +47,21 @@ export const GridSection = () => {
         <ul className="container">
           {dataApi &&
             dataApi.map((photo, idx) => (
-              <li key={idx} className="li">
-                <PhotoCard photo={photo} />
+              <li key={idx} className="list">
+                <img
+                  className="img"
+                  src={photo.urls.regular}
+                  alt="alternativa"
+                />
+                {/* <span>
+                  <a
+                    className="credit"
+                    target="blank"
+                    href={`https://unsplash.com/@${photo.user.username}`}
+                  >
+                    {photo.user.name} |{" "}
+                  </a>
+                </span> */}
               </li>
             ))}
         </ul>

@@ -6,7 +6,7 @@ export const PhotoCard = ({ photo }) => {
     <Fragment>
       <figure>
         <img className="img" src={urls.regular} alt="alternativa" />
-        <figcaption>
+        <span>
           <a
             className="credit"
             target="blank"
@@ -14,7 +14,7 @@ export const PhotoCard = ({ photo }) => {
           >
             {user.name} |{" "}
           </a>
-        </figcaption>
+        </span>
       </figure>
     </Fragment>
   );
