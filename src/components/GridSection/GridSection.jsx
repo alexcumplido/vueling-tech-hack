@@ -43,32 +43,34 @@ export const GridSection = () => {
     );
   } else {
     return (
-      <div className="feed">
-        <ul className="container">
+      <>
+        <div className="container-standard button-wrapper">
+          <button className="button" onClick={(event) => handleClick(event)}>
+            Cargar nuevas fotos
+          </button>
+        </div>
+        <ul className="gallery container-standard">
           {dataApi &&
             dataApi.map((photo, idx) => (
-              <li key={idx} className="list">
+              <li key={idx} className="item">
                 <img
                   className="img"
                   src={photo.urls.regular}
                   alt="alternativa"
                 />
-                {/* <span>
+                <span>
                   <a
                     className="credit"
                     target="blank"
                     href={`https://unsplash.com/@${photo.user.username}`}
                   >
-                    {photo.user.name} |{" "}
+                    {photo.user.name}
                   </a>
-                </span> */}
+                </span>
               </li>
             ))}
         </ul>
-        <button className="padding" onClick={(event) => handleClick(event)}>
-          Load more
-        </button>
-      </div>
+      </>
     );
   }
 };
