@@ -1,6 +1,6 @@
 # Vueling Tech Hack | Front End Challenge ⚛
 
-This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vueling-tech-hack/unsplash-viewer-app-frontend) required to participate in the February Vueling Tech Hack 2023. The goal is to build an Unsplash viewer app starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:78) design. Visualize the [deployed project here]().
+This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vueling-tech-hack/unsplash-viewer-app-frontend) required to participate in the February Vueling Tech Hack 2023. The goal is to build an Unsplash viewer app starting from this [Figma](https://www.figma.com/file/8DTsCBsanZ0OEoLdiY1qzW?node-id=4:78) design. Visualize the [deployed project here](https://vueling-tech-hack.vercel.app/).
 
 **Quality test**
 
@@ -10,7 +10,7 @@ This is a response to the [Nuwe challenge](hhttps://nuwe.io/dev/competitions/vue
 
 1. Integrate the [Unsplash API](https://github.com/unsplash/unsplash-js#unsplash)
 2. Create a masonry layout as a gallery
-3. Implement a button that fetches new images from Unsplash API
+3. Implement a button that fetches new images from the Unsplash API
 4. Deploy the project
 
 Extra improvements allowed:
