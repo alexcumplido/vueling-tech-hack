@@ -43,7 +43,7 @@ export const GridSection = () => {
 
   useEffect(() => {
     fetchUnsplash();
-  }, [page]);
+  }, [page]); //eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className="container-standard">
