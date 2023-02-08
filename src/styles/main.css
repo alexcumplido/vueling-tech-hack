@@ -64,6 +64,13 @@ button {
   flex: 1;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .button {
   padding: 1.5rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -125,4 +132,24 @@ span {
   bottom: 0;
   width: 100%;
   color: var(--color-primary-100);
+}
+
+.loader {
+  align-self: center;
+  justify-self: center;
+  margin: 0 auto;
+  width: 150px;
+  overflow: visible;
+}
+
+.loader circle {
+  stroke: var(--color-primary-200);
+  transform-origin: 50px 50px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
