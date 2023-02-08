@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { unsplashApi } from "../../services/unsplash.js";
+import { fetchUnsplash } from "../../services/unsplash.js";
 import { Button } from "../Button/Button.jsx";
 import { Loader } from "../Loader/Loader.jsx";
 import { CardPhoto } from "../CardPhoto/CardPhoto.jsx";
@@ -16,15 +16,9 @@ export const GridSection = () => {
     }
   };
 
-  async function fetchUnsplash() {
+  async function handleUnsplash() {
     try {
-      const data = await unsplashApi.search.getPhotos({
-        query: "nature",
-        page: page,
-        perPage: 15,
-        color: "green",
-        orientation: "landscape",
-      });
+      const data = await fetchUnsplash(page);
       setDataFetched(data);
       const resultsMapper = data.response.results.map((element) =>
         cleanObject(element)
@@ -36,7 +30,7 @@ export const GridSection = () => {
   }
 
   useEffect(() => {
-    fetchUnsplash();
+    handleUnsplash();
   }, [page]); //eslint-disable-line react-hooks/exhaustive-deps
 
   return (

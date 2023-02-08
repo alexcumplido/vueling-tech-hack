@@ -43,6 +43,26 @@ This challenge required to layout of the gallery and the images as a masonry gri
 }
 ```
 
+The unsplash fetching function is created as a service so in case of necessity could be implemented in other components.
+
+```js
+export async function fetchUnsplash(page) {
+  let data;
+  try {
+    data = await unsplashApi.search.getPhotos({
+      query: "nature",
+      page: page,
+      perPage: 11,
+      color: "green",
+      orientation: "landscape",
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+  return data;
+}
+```
+
 ## Installation ⚙️
 
 Clone this repository into a newly created directory
