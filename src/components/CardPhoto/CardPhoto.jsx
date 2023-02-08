@@ -1,6 +1,6 @@
-export function CardPhoto({ photo, key }) {
+export function CardPhoto({ photo }) {
   return (
-    <li key={key} className="item">
+    <li className="item">
       <img className="item__image" src={photo.regular} alt="alternativa" />
       <a
         className="item__link"
